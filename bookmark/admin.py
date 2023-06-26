@@ -8,5 +8,5 @@ from bookmark.models import Bookmark
 
 # 데코레이터 패턴 사용하는 방법
 @admin.register(Bookmark)
-class BookAdmin(admin.ModelAdmin):
+class BookMarkAdmin(admin.ModelAdmin):
     list_display = ('id','title','url')

@@ -61,6 +61,9 @@ TEMPLATES = [
         'DIRS': [
             # os.path.join(BASE_DIR,'templates'),
             # 'bookmark/templates/bookmark',
+            'templates',
+            'blog/templates/blog',
+            'bookmark/templates/bookmark',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -131,3 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+# TEMPLATE_DIRS = [os.path.join(BASE_DIR,'templates')]

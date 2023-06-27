@@ -49,15 +49,23 @@
         </form>
     </div>
 </nav>
+{% extends 'base.html' %}
 
+{% block title %}
+ home.html
+{% endblock title %}
+
+{% block content %}
 <div class="container bg-warning">
     <h4>This is CONTENT area.</h4>
 </div>
+{% endblock %}
 
+{% block footer %}
 <footer class="fixed-bottom bg-info">
     <h4>THIS is FOOTER area.</h4>
 </footer>
-
+{% endblock footer %}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>

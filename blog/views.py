@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, ArchiveIndexView, YearArchiveView, MonthArchiveView, \
     DayArchiveView, TodayArchiveView, TemplateView
 
+from django.conf import settings
 from blog.models import Post
 
 

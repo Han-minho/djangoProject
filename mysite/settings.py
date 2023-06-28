@@ -31,7 +31,7 @@ ALLOWED_HOSTS = [
 
 
 # Application definition
-
+# blog,bookmark,photo 추가
 INSTALLED_APPS = [
     'photo.apps.PhotoConfig',
     'blog.apps.BlogConfig',

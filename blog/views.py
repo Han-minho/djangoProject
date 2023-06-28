@@ -13,7 +13,7 @@ class PostLV(ListView):
     context_object_name = 'posts'
     paginate_by = 2
 
-
+# DISQUS 사용
 class PostDV(DetailView):
     model = Post
 

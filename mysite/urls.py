@@ -25,6 +25,7 @@ urlpatterns = [
     path('',HomeView.as_view(),name='home'),
     path('blog/',include('blog.urls')),
     path('photo/',include('photo.urls')),
+
     path('bookmark/',BookmarkLV.as_view(),name='index'),
     path('bookmark/<int:pk>',BookmarkDV.as_view(),name='detail'),
 ]

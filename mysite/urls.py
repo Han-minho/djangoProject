@@ -15,17 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls.static import static
 from django.urls import path,include
 
 from bookmark.views import BookmarkLV, BookmarkDV
+from django.conf import settings
 from mysite.views import HomeView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',HomeView.as_view(),name='home'),
-    path('blog/',include('blog.urls')),
-    path('photo/',include('photo.urls')),
+    path("admin/", admin.site.urls),
+    path('', HomeView.as_view(), name='home'),
+    path('blog/', include('blog.urls')),
+    path('photo/', include('photo.urls')),
 
-    path('bookmark/',BookmarkLV.as_view(),name='index'),
-    path('bookmark/<int:pk>',BookmarkDV.as_view(),name='detail'),
-]
+    path('bookmark/', BookmarkLV.as_view(), name='index'),
+    path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

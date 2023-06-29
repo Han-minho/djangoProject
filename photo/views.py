@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from photo.models import Album
+from photo.models import Album, Photo
 
 
 # Create your views here.
@@ -14,4 +14,4 @@ class AlbumDV(DetailView):
 
 
 class PhotoDV(DetailView):
-    model = Album
+    model = Photo

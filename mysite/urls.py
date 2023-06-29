@@ -25,7 +25,7 @@ from mysite.views import HomeView, UserCreateView, UserCreateDoneTV
 urlpatterns = [
     path("admin/", admin.site.urls),
     # 인증
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/register/',UserCreateView.as_view(), name='register'),
     path('accounts/register/done/',UserCreateDoneTV.as_view(), name='register_done'),
 

@@ -15,7 +15,6 @@ class BookmarkLV(ListView):
 class BookmarkDV(DetailView):
     model = Bookmark
 
-
 class BookmarkCreateView(LoginRequiredMixin, CreateView):
     model = Bookmark
     fields = ['title', 'url']
@@ -24,17 +23,6 @@ class BookmarkCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.owner = self.request.user
         return super().form_valid(form)
-
-
-class BookmarkCreateView(LoginRequiredMixin, CreateView):
-    model = Bookmark
-    fields = ['title', 'url']
-    success_url = reverse_lazy('book:index')
-
-    def form_valid(self, form):
-        form.instance.owner = self.request.user
-        return super().form_valid(form)
-
 
 class BookmarkChangeLV(LoginRequiredMixin, ListView):
     template_name = 'bookmark/bookmark_change_list.html'
@@ -42,12 +30,10 @@ class BookmarkChangeLV(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Bookmark.objects.filter(owner=self.request.user)
 
-
 class BookmarkUpdateView(OwnerOnlyMixin, UpdateView):
     model = Bookmark
     fields = ['title', 'url']
     success_url = reverse_lazy('bookmark:index')
-
 
 class BookmarkDeleteView(OwnerOnlyMixin, DeleteView):
     model = Bookmark
